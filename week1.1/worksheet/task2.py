@@ -21,9 +21,10 @@ except ValueError:
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
 # print this out for the user with a suitable message.
 year_total = amount_per_month * 12
-print(f"Total saved in one year without interest: £{year_total}.00")
+print(f"Total saved in one year without interest: £{year_total:.2f}")
 
 # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
 # print this out in the format £X.XX (to two decimal places).
-total_with_interest = year_total * 1.008
+interest = year_total * 0.008
+total_with_interest = year_total + interest 
 print(f"Total saved including 0.8% interest: £{total_with_interest:.2f}")
