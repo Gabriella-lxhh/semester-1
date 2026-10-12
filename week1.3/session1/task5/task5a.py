@@ -7,4 +7,9 @@ for ch in course:
 
 
 # create a list data structure of the characters from the course string
+char_list = list(course)
+
+
 # sort the list into alphabetical order
+char_list.sort()
+print (char_list)

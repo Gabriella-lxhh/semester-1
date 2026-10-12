@@ -8,5 +8,9 @@ while i < 20:
 
 # Add logic using continue so that multiples of 3 are not printed out
 # Hint: we discused operators such as % and // in recent weeks
-
+    if i % 3 == 0:
+            continue 
+    print(i)
 # Hint 2: there are several ways to do this - using truthy/falsey values is the least code
+    if not i % 3:
+            continue

@@ -7,3 +7,5 @@ while fruit:
 
 
 # Add an else clause with a message that the list is now empty
+else:
+	print("The list is now empty.")
