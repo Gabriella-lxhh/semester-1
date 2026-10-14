@@ -3,8 +3,9 @@ import sys
 from util import read_numbers
 numbers = read_numbers()
 if len(numbers) == 0:
-    print("Error: no numbers provided")
+    print("Error: no numbers provided", file=sys.stderr)
     sys.exit(1)
+
 minimum = min(numbers)
 maximum = max(numbers)
 print(f"Minimum = {minimum}")
