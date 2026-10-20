@@ -3,15 +3,15 @@
 # open a named text file for reading using open() function
 # the `with` statement closes the file automatically as the block of code finishes executing
 
-with open('file_data.txt', 'r') as file:  
+from pathlib import Path
+file_path = Path(__file__).parent / 'file_data.txt'
 
+with open(file_path, 'r') as file:
     while True:
-        # read by character
-        char = file.read(1)            # read exactly 1 character from the file      
-        if not char: 
+        char = file.read(1)
+        if not char:
             break
-
-        print(char)
+        print(char, end='')
 
 # This example shows a common while-break pattern - reading from a file
 

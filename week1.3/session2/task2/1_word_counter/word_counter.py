@@ -2,10 +2,11 @@
 
 # We want to read in a text file, and calculate how many words are in it. 
 # You can use any of the .txt files to test this - or even make your own.
+from pathlib import Path
 
-#file_path = Path( __file__).parent / "story.txt"
+file_path = Path( __file__).parent / "story.txt"
 # open and read the file
-with open ("story.txt","r") as infile:
+with open (file_path,"r") as infile:
     text = infile.read() 
 # calculate the number of words
 # print(text)
