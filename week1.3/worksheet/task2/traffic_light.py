@@ -24,10 +24,11 @@ while systime < maxtime:
         if state == "red":
             state = "red_amber"
         elif state == "red_amber":
-            state = "green"
+
+          state = "green"
         elif state == "green":
             state = "amber"
         elif state =="amber":
             state = "red"
         state_time = 0
-print(f"Time {systime:03} State {state}")
+    print(f"Time {systime:03} State {state}")
