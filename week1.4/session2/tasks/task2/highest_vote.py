@@ -20,7 +20,26 @@ def most_frequent_string(votes):
     # Your task is to complete the body of the function based on the details in the docstring.
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
+    if not votes:
+        return None, None
 
+    # Your code here
+    counts = {}
+    for item in votes:
+        if item in counts:
+            counts[item] += 1
+        else:
+            counts[item] = 1
+
+    highest_item = None
+    highest_count = 0
+
+    for item, count in counts.items():
+        if count > highest_count:
+            highest_item = item
+            highest_count = count
+
+    return highest_item, highest_count
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
          'date', 'elderberry', 'elderberry', 'date', 'banana']
@@ -38,5 +57,6 @@ print(most_frequent_string(names))     # ('Leigh-Anne', 10)
 print(most_frequent_string([]))             # (None, None)
 
 # If completed, you could update the function to return all items that tie for the
+
 # highest count in a list, e.g  (['apples', 'bananas'], 9). If there is no
 # tie, return a single string and a value as usual, e.g ('apples, 9).
