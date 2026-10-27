@@ -5,8 +5,11 @@ class Point:
     A Point in 2D space.
     """
 
-    # Add constructor here
-
+    # Add constructor her
+    def __init__(self, x, y):
+        """
+        Create a point with x and y coordinates.
+        """
     # Add distance() method here
 
     # Add distance_to() method here
