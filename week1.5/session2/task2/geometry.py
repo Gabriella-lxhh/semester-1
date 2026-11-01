@@ -13,26 +13,20 @@ class Point:
     """
 
     def __init__(self, x, y):
-        """
-        Creates a Point, given x & y coordinates.
-        """
+        self.set_x(x)
+        self.set_y(y)
+
+    def set_x(self, x):
+        if not isinstance(x, (int, float)):
+            raise TypeError("x must be a number")
         self.x = x
+
+    def set_y(self, y):
+        if not isinstance(y, (int, float)):
+            raise TypeError("y must be a number")
         self.y = y
-
-    def distance(self):
-        """
-        Returns distance of this Point from the origin.
-        """
-        return math.hypot(self.x, self.y)
-
-    def distance_to(self, p):
-        """
-        Returns distance of this Point from another Point.
-        """
-        return math.hypot(self.x - p.x, self.y - p.y)
-
-    # Implement a __str__() method here
-
+    def __str__(self):
+        return f"({self.x},{self.y})"
 
 class Circle:
     """
@@ -56,10 +50,17 @@ class Circle:
         """
         return math.pi * self.radius * self.radius
 
+   
     def perimeter(self):
-        """
-        Returns the perimeter of this Circle.
-        """
         return 2.0 * math.pi * self.radius
 
+    def __str__(self):
+        return f"Circle(radius={self.radius}, centre={self.centre})"
+
+
+p = Point(3, 4)
+print(p)
+
+c = Circle(5, p)
+print(c)
     # Implement a __str__() method here
