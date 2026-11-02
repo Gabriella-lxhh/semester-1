@@ -28,6 +28,9 @@ class QuakeDataset:
         self.data = []
 
     def read_feed(self):
+        self.data = []
+        for item in self.feed.reader():
+            pass
         """
         Refreshes this dataset with data from the linked feed.
 
@@ -43,6 +46,7 @@ class QuakeDataset:
         # creating a Quake object and storing it in the list.
 
     def __len__(self):
+        return len(self.data)
         """
         Returns the size of this dataset.
         """
