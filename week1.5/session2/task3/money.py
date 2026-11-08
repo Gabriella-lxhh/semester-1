@@ -45,6 +45,7 @@ class Money:
             raise TypeError("other must be a Money object")
         total_pounds = self.pounds + other.pounds
         total_pence = self.pence + other.pence
+        # Convert every 100 pence into one pound
         if total_pence >= 100:
             total_pounds += 1
             total_pence -= 100
