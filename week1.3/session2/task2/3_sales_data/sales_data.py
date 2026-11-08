@@ -8,7 +8,36 @@
 #   - average sale amount
 #   - the widget which has been sold the most
 # and print these out in a nice, human-readable format
+with open("sales.csv", "r") as infile:
+    data = infile.readlines()
 
+data = [line.strip().split(",") for line in data[1:]]
+
+if data:
+    largest_sale = int(data[0][2])
+    largest_day = data[0][0]
+    total = 0
+    product_units = {}
+    
+    for row in data:
+        sale_amount = int(row[2])
+        units_sold = int(row[3])
+        product = row[1]
+
+        total += sale_amount
+
+        if sale_amount > largest_sale:
+            largest_sale = sale_amount
+            largest_day = row[0]
+
+        product_units[product] = product_units.get(product, 0) + units_sold
+
+    average_sale = total / len(data)
+    most_sold_widget = max(product_units, key=product_units.get)
+
+    print(f"Largest sale day: {largest_day} with amount: {largest_sale}")
+    print(f"Average sale amount: {average_sale}")
+    print(f"Most sold widget: {most_sold_widget} with units sold: {product_units[most_sold_widget]}")
 
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region

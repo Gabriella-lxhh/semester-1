@@ -6,6 +6,15 @@
 
 
 # open and read the file
+try:
+    with open("site.log", "r") as infile:
+        data = infile.readlines()
+
+    data = data[1:]
+    data = [line.strip().split(",") for line in data]
+except OSError as error:
+    print("Error reading file:", error)
+    data = []
 
 # find all failed login attempts (POST /login with the response 401)
 # and print these out in a human-readable format:

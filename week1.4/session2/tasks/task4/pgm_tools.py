@@ -58,10 +58,10 @@ def invertPGM( image ):
     for row in pixels:
         new_row = []
 
-    for pixel in row:
-        new_row.append(max_gray - pixel)
+        for pixel in row:
+            new_row.append(max_gray - pixel)
 
-    inverted.append(new_row)
+        inverted.append(new_row)
     return width,height,max_gray,inverted
 
 # code to test the PGM functions
