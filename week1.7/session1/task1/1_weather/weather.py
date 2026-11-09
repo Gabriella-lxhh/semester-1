@@ -13,3 +13,9 @@ def comfort_level(temperature):
         return "HOT"
     else:
         return "OK"
+
+# Test
+
+temp = 20.0 # Arrange
+level = comfort_level(temp) # Act
+assert level == "OK" #Assert
